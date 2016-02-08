@@ -1,0 +1,38 @@
+package paka;
+import java.util.Scanner;
+
+public class Glowny {
+public void metoda(int a)
+	{
+		int tab[]= new int[100];
+		int i=0,licznik=0, reszta;
+		try
+		{
+		while(a>0)
+		{
+		reszta = a%2;
+		tab[i] = reszta;
+		a = (a-reszta)/2;
+		i++;
+		licznik++;
+		}
+		for (int j=licznik-1;j>=0;j--)
+		{
+			System.out.println(tab[j]);
+		}
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("Podana wartosc wychdzi poza tablice");
+		}
+			
+	}
+	public static void main(String[] args) {
+		
+		Glowny x = new Glowny();
+		Scanner wczytaj = new Scanner(System.in);
+		int liczba = wczytaj.nextInt();
+		x.metoda(liczba);
+		wczytaj.close();
+	}
+}
